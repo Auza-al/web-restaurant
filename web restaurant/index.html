@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>354 Resto.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo"><i class="fas fa-utensils"></i> 354REST<span>.</span></a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#reservation">Book Table</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-moon" id="theme-btn"></i>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-bars" id="menu-bar"></i>
+        </div>
+    </div>
+</header>
+
+<section class="home" id="home">
+    <div class="home-wrapper">
+        <div class="content">
+            <h3>Rasa Tempatan, <br> Standard Antarabangsa</h3>
+            <p>Nikmati hidangan bersih, berkualiti tinggi yang disediakan dengan bahan-bahan segar setiap hari oleh chef profesional.</p>
+            <a href="#menu" class="btn">Lihat Menu</a>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600" alt="Hero Food">
+        </div>
+    </div>
+</section>
+
+<section class="menu" id="menu">
+    <h2 class="section-title">Menu <span>Istimewa</span></h2>
+    
+    <div class="menu-tabs">
+        <button class="tab-btn active" data-target="breakfast">Breakfast</button>
+        <button class="tab-btn" data-target="lunch">Lunch</button>
+        <button class="tab-btn" data-target="dinner">Dinner</button>
+    </div>
+
+    <div class="menu-grid">
+    <div class="box menu-item" data-category="breakfast">
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=400" alt="">
+            <span class="price-tag">IDR24K</span>
+        </div>
+        <div class="box-content">
+            <h4>Avocado Toast Deluxe</h4>
+            <p>Roti gandum dengan alpukat segar, telur apung, dan chili flakes.</p>
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="box menu-item" data-category="lunch">
+        <div class="image-box">
+            <img src="c:\Users\LENOVO\Downloads\download (6).jpg" alt="">
+            <span class="price-tag">IDR18K</span>
+        </div>
+        <div class="box-content">
+            <h4>Salad</h4>
+            <p>Berbagai menu salad untuk siap disajikan.</p>
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        </div>
+    </div>
+    <div class="box menu-item" data-category="breakfast">
+        <div class="image-box">
+            <img src="c:\Users\LENOVO\Downloads\download (5).jpg" alt="">
+            <span class="price-tag">IDR18K</span>
+        </div>
+        <div class="box-content">
+            <h4>French Toast Berry</h4>
+            <p>Roti bakar klasik disajikan dengan beri segar dan sirap maple.</p>
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        </div>
+    </div>
+    <div class="box menu-item" data-category="dinner">
+        <div class="image-box">
+            <img src="c:\Users\LENOVO\Downloads\Mostaccioli_EXPS_FT24_3353_ST_0212_2.jpg" alt="">
+            <span class="price-tag">IDR18K</span>
+        </div>
+        <div class="box-content">
+            <h4>Mostaccioli</h4>
+            <p> hidangan pasta yang kaya rasa dan berkeju.</p>
+            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+        </div>
+    </div>
+</div>
+</section>
+<section class="order-list" id="order-list">
+    <h2 class="section-title">Pesanan <span>Anda</span></h2>
+    <div class="cart-container">
+        <div class="cart-items">
+            <p class="empty-msg">Belum ada pesanan.</p>
+        </div>
+        <div class="cart-total">
+    <div class="table-section">
+        <h3><i class="fas fa-chair"></i> Pilih No. Meja</h3>
+        <div class="table-grid" id="table-grid">
+            <div class="table-card" data-table="1">01</div>
+            <div class="table-card" data-table="2">02</div>
+            <div class="table-card" data-table="3">03</div>
+            <div class="table-card" data-table="4">04</div>
+            <div class="table-card" data-table="5">05</div>
+            <div class="table-card" data-table="6">06</div>
+        </div>
+        <input type="hidden" id="selected-table-value" value="">
+    </div>
+
+    <div class="price-summary">
+        <h3>Total: <span id="total-price">IDR 0</span></h3>
+        <button class="btn btn-proses" onclick="checkout()">Proses Pesanan</button>
+    </div>
+</div>
+    </div>
+</section>
+<section class="reservation" id="reservation">
+    <h2 class="section-title">Pesan <span>Meja</span></h2>
+    
+    <div class="row">
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="Nama Lengkap">
+                <input type="number" placeholder="Jumlah Orang">
+            </div>
+            <div class="inputBox">
+                <input type="date">
+                <input type="time">
+            </div>
+            <textarea placeholder="Pesanan Khas (Jika ada)" cols="30" rows="10"></textarea>
+            <input type="submit" value="Pesan Sekarang" class="btn">
+        </form>
+
+        <div class="image">
+            <img src="c:\Users\LENOVO\Downloads\res.jpg" alt="Restaurant Interior">
+        </div>
+    </div>
+    <div class="address-container">
+        <div class="address-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>No. 123, Jalan Dunia Akhirat, Bulan Bintang, 50250 Jakarta, Indonesia</p>
+        </div>
+        <div class="address-item">
+            <i class="fas fa-phone"></i>
+            <p>+62 3-1234 5678</p>
+        </div>
+        <div class="social-links">
+        <div class="share">
+    <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-f"></a>
+    <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"></a>
+</div>
+    </div>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
